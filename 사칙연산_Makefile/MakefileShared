@@ -1,0 +1,7 @@
+out : 
+	cd lib;	make;
+	cd ..;
+	gcc -I./lib -L./lib -o sharedout main.c lib/libshared.so
+clean :
+	rm -f lib/libshared.so.1.0.1 lib/libshared.so.1 lib/libshared.so sharedout
+	cd lib; make clean
